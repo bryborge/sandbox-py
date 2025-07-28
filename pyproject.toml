@@ -10,7 +10,7 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 name = "sandbox-py"
 readme = "README.md"
-requires-python = ">= 3.8"
+requires-python = ">= 3.11"
 
 [project.optional-dependencies]
 dev = [
@@ -28,15 +28,16 @@ testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = "--cov=src --cov-report=html --cov-report=term-missing"
+addopts = [
+    "--cov=.",
+    "--cov-report=term-missing",
+    "--cov-report=html:htmlcov"
+]
 
 [tool.ruff]
-line-length = 88
-target-version = "py38"
-lint.select = ["E", "F", "W", "C90", "I", "N", "UP"]
+line-length = 100
 
 [tool.mypy]
-python_version = "3.8"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true

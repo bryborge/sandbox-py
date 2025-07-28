@@ -1,4 +1,3 @@
-import pytest
 from greetings import greeting
 
 
