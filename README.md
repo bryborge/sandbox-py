@@ -30,7 +30,7 @@ and running.
     pip install -e .[dev]
     ```
 
-## Spinning Down
+## 🔌 Spinning Down
 
 When you are all done using the container, spin it down:
 
