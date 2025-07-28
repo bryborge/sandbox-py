@@ -1,0 +1,42 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 77.0.3"]
+
+[project]
+dependencies = []
+description = "A portable Python Development Environment for experimentation and glory."
+dynamic = ["version"]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+name = "sandbox-py"
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.optional-dependencies]
+dev = [
+    "pytest >= 8.4.0",
+    "pytest-cov >= 6.2.0",
+    "pytest-mock >= 3.10.0",
+    "pytest-xdist >= 3.0.0",
+    "ruff >= 0.1.0",
+    "mypy >= 1.0.0",
+    "pre-commit >= 4.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=src --cov-report=html --cov-report=term-missing"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+lint.select = ["E", "F", "W", "C90", "I", "N", "UP"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

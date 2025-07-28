@@ -17,16 +17,31 @@ and running.
     make up
     ```
 
-That's it. If you want to drop into the container at a shell, run:
+    That's it. If you want to drop into the container at a shell, run:
 
-```sh
-make shell
-```
+    ```sh
+    make shell
+    ```
 
-And when you are all done using the container, spin it down:
+2.  Install dependencies (inside the container):
+
+    ```sh
+    pip install -e .
+    pip install -e .[dev]
+    ```
+
+## Spinning Down
+
+When you are all done using the container, spin it down:
 
 ```sh
 make down
+```
+
+And if you'd like to clean up all the cache and generated files:
+
+```sh
+make clean
 ```
 
 ## 📚 Resources
