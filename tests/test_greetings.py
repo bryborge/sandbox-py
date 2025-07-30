@@ -1,22 +1,24 @@
-from greetings import greeting
+"""Test Suite for the Greetings Module."""
+
+from greetings.main import main
 
 
 class TestGreetingsModule:
-    """Test Greeting Module structure."""
+    """Unit Tests for the Greetings Module."""
 
-    def test_greeting(self):
-        """Test that the greeting function returns the expected message."""
-        result = greeting()
+    def test_greeting(self) -> None:
+        """Test that the main function returns the expected message."""
+        result = main()
         assert result == "Hello World"
 
 
-    def test_greeting_is_string(self):
-        """Test that the greeting function returns a string."""
-        result = greeting()
+    def test_greeting_is_string(self) -> None:
+        """Test that the main function returns a string."""
+        result = main()
         assert isinstance(result, str)
 
 
-    def test_greeting_not_empty(self):
+    def test_greeting_not_empty(self) -> None:
         """Test that the greeting function doesn't return an empty string."""
-        result = greeting()
+        result = main()
         assert len(result) > 0
