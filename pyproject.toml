@@ -41,8 +41,10 @@ addopts = [
 lint.select = ["ALL"]
 # See: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
 lint.ignore = [
+    "COM812",   # prohibited-trailing-comma
     "D105",     # undocumented-magic-method
     "D203",     # one-blank-line-before-class
+    "D213",     # multi-line-summary-second-line
     "D413",     # blank-line-after-last-section
 ]
 line-length = 100

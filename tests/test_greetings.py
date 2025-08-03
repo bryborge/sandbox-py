@@ -11,12 +11,10 @@ class TestGreetingsModule:
         result = main()
         assert result == "Hello World"
 
-
     def test_greeting_is_string(self) -> None:
         """Test that the main function returns a string."""
         result = main()
         assert isinstance(result, str)
-
 
     def test_greeting_not_empty(self) -> None:
         """Test that the greeting function doesn't return an empty string."""
