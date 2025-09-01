@@ -1,12 +1,3 @@
-up:
-	@PODMAN_COMPOSE_WARNING_LOGS=false podman compose up -d --build --remove-orphans
-
-down:
-	@PODMAN_COMPOSE_WARNING_LOGS=false podman compose down
-
-shell:
-	@PODMAN_COMPOSE_WARNING_LOGS=false podman compose exec sandbox-py bash
-
 clean:
 	@echo "Cleaning up cache and generated files..."
 	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
