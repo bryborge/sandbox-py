@@ -16,11 +16,11 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -ms /bin/bash bry-dev
+RUN useradd -ms /bin/bash bryborge
 
 RUN python3 -m venv /opt/venv
-RUN chown -R bry-dev:bry-dev /opt/venv
+RUN chown -R bryborge:bryborge /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 WORKDIR /workspace
-USER bry-dev
+USER bryborge
